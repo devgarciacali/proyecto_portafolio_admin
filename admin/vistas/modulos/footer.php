@@ -2,7 +2,7 @@
 <footer class="sticky-footer bg-white">
     <div class="container my-auto">
         <div class="copyright text-center my-auto">
-            <span>Universidad Tecnologica de la Tierra Caliente 2024</span>
+           <p>&copy; 2025 Jose Manuel Garcia.</p>
         </div>
     </div>
 </footer>
