@@ -50,6 +50,7 @@ $(".nuevoLogo").change(function(){
       processData: false,
       dataType: "json",
       success: function(respuesta){
+         console.log('AJAX editar main respuesta:', respuesta);
        $("#editarnombre").val(respuesta['nombre']);
         $("#editarespecialidad").val(respuesta['especialidad']);
         $("#editardescripcion").val(respuesta['descripcion']);
@@ -60,5 +61,45 @@ $(".nuevoLogo").change(function(){
       }
     });
  });
+
+   // Actualizar etiqueta del custom-file y previsualizar imagen al seleccionar en el modal editar
+   $(document).on('change', '#editarnuevaFoto', function(){
+      let imagen = this.files[0];
+      // actualizar label
+      let fileName = imagen ? imagen.name : 'Seleccionar archivo';
+      $(this).next('.custom-file-label').html(fileName);
+
+      if(!imagen) return;
+
+      if(imagen["type"] != "image/jpeg" && imagen["type"] != "image/png"){
+         $(this).val("");
+         $(this).next('.custom-file-label').html('Seleccionar archivo');
+         swal({
+            title: "Error al subir la imagen",
+            text: "La imagen debe estar en formato JPG o PNG",
+            type: "error",
+            confirmButtonText: "Cerrar"
+         });
+         return;
+      }else if(imagen["size"]>2000000){
+         $(this).val("");
+         $(this).next('.custom-file-label').html('Seleccionar archivo');
+         swal({
+            title: "Error al subir la imagen",
+            text: "La imagen no debe pesar mas de 2MB",
+            type: "error",
+            confirmButtonText: "Cerrar"
+         });
+         return;
+      } else {
+         let datosImagen = new FileReader();
+         datosImagen.readAsDataURL(imagen);
+         $(datosImagen).on('load', function(event){
+            let rutaImagen = event.target.result;
+            // solo actualizar la previsualizacion del modal (primera encontrada)
+            $('.previsualizar').attr('src', rutaImagen);
+         });
+      }
+   });
 
  

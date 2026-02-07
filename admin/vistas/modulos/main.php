@@ -3,9 +3,9 @@
 
     <!-- Page Heading -->
     <h1 class="h3 mb-2 text-gray-800">Administrar Main</h1>
-    <button class="btn btn-primary mb-3" data-toggle="modal" data-target="#modalAgregarMain">
+    <!-- <button class="btn btn-primary mb-3" data-toggle="modal" data-target="#modalAgregarMain">
         Agregar Main
-    </button>
+    </button> -->
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
         <div class="card-header py-3">
@@ -131,68 +131,66 @@
 <!-- TEMINA MODAL AGREGAR cabezera -->
 
 <!-- MODAL EDITAR CABEZERA -->
-
-<div class="modal fade" id="modalEditarMain" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog" role="document">
+<div class="modal fade" id="modalEditarMain" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <form class="user" method="post" enctype="multipart/form-data">
-                <!-- CABEZA MODAL -->
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">Editar Main</h5>
                     <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">❌</span>
+                        <span aria-hidden="true">×</span>
                     </button>
                 </div>
-                <!-- TERMINA CABEZA MODAL -->
 
-                <!-- CUERPO MODAL -->
                 <div class="modal-body">
-                    <div class="form-group row">
+                    <div class="container-fluid">
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label class="small font-weight-bold">Nombre</label>
+                                <input type="text" class="form-control" name="editarnombre" id="editarnombre" placeholder="Nombre completo">
+                                <input type="hidden" name="editarid" id="editarid" value="">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label class="small font-weight-bold">Especialidad</label>
+                                <input type="text" class="form-control" name="editarespecialidad" id="editarespecialidad" placeholder="Ej. Ing. de Software">
+                            </div>
+                        </div>
 
-                        <!-- ENTRADA nombre -->
-                        <div class="col-sm-6">
-                            <input type="text" class="form-control form-control-user" name="editarnombre"
-                                id="editarnombre" value="">
-                            <input type="hidden" name="editarid" id="editarid" value="">
+                        <div class="form-group">
+                            <label class="small font-weight-bold">Descripción</label>
+                            <textarea class="form-control" name="editardescripcion" id="editardescripcion" rows="4" placeholder="Breve descripción sobre el perfil..."></textarea>
                         </div>
-                        <!-- ENTRADA ESPECIALIDAD   -->
-                        <div class="col-sm-6 py-3">
-                            <input type="text" class="form-control form-control-user" name="editarespecialidad"
-                                id="editarespecialidad" value="">
-                        </div>
-                        <!-- ENTRADA DESCRIPCION -->
-                        <div class="col-sm-6 py-3">
-                            <input type="text" class="form-control form-control-user" name="editardescripcion"
-                                id="editardescripcion" value="">
-                        </div>
-                        <!-- ENTRADA FOTO -->
 
-                        <div class="col-sm-6 py-3">
-                            <input type="file" class="nuevaFoto form-control form-control-user" name="editarnuevaFoto">
-                            <p>Peso maximo de la foto 2MB</p>
-                            <img src="vistas/img/usuarios/default/anonimo.png" class="img-thumbail previsualizar"
-                                width="100px">
-                            <input type="hidden" name="fotoactual" id="fotoactual">
+                        <div class="form-row align-items-center">
+                            <div class="form-group col-md-6">
+                                <label class="small font-weight-bold">Foto (opcional)</label>
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" id="editarnuevaFoto" name="editarnuevaFoto">
+                                    <label class="custom-file-label" for="editarnuevaFoto">Seleccionar archivo</label>
+                                </div>
+                                <small class="form-text text-muted">Peso máximo 2MB. Formato JPG o PNG.</small>
+                                <input type="hidden" name="fotoactual" id="fotoactual">
+                            </div>
+                            <div class="form-group col-md-6 text-center">
+                                <label class="small font-weight-bold d-block">Previsualización</label>
+                                <div class="border rounded d-inline-block p-2 bg-white">
+                                    <img src="vistas/img/usuarios/default/anonimo.png" class="img-fluid previsualizar" style="max-height:160px;">
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <!-- TERMINA CUERPO DEL MODAL -->
 
-                <!-- PIE DEL MODAL -->
                 <div class="modal-footer">
-                    <button class="btn btn-danger" type="button" data-dismiss="modal">Salir</button>
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Salir</button>
                     <button class="btn btn-success" type="submit">Guardar Cambios</button>
                 </div>
-                <!-- TERMINA PIE DEL MODAL -->
+
                 <?php
-                $editarMain = new ControladorMain();
-                $editarMain->ctrEditarMain();
+                    $editarMain = new ControladorMain();
+                    $editarMain->ctrEditarMain();
                 ?>
             </form>
-            <?php
-
-            ?>
         </div>
     </div>
 </div>

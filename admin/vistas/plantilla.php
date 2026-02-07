@@ -37,8 +37,30 @@ if (isset($_SESSION['actividad'])) {
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
 
+    <!-- Tailwind CDN (utilities only, safe for progressive enhancement) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#00d4ff',
+                        secondary: '#7000ff',
+                        dark: '#0f0f0f',
+                        'dark-lighter': '#1a1a1a'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- AOS (Animate on Scroll) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
     <!-- Custom styles for this template-->
     <link href="vistas/css/sb-admin-2.min.css" rel="stylesheet">
+    <!-- Admin Tailwind theme overrides -->
+    <link href="vistas/css/admin-tailwind.css" rel="stylesheet">
 
     <!-- SweetAlert2 -->
     <script src="vistas/plugins/sweetalert2/sweetalert2.all.js"></script>
@@ -197,6 +219,9 @@ if (isset($_SESSION['actividad'])) {
     <!-- Core plugin JavaScript-->
     <script src="vistas/vendor/jquery-easing/jquery.easing.min.js"></script>
 
+    <!-- AOS animations -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
     <!-- Custom scripts for all pages-->
     <script src="vistas/js/sb-admin-2.min.js"></script>
     <script src="vistas/js/usuarios.js"></script>
@@ -209,6 +234,15 @@ if (isset($_SESSION['actividad'])) {
     <script src="vistas/js/iconos.js"></script>
     <script src="vistas/js/sociales.js"></script>
     <script src="vistas/js/main.js"></script>
+
+    <script>
+        // Init AOS for subtle animations across the admin
+        AOS.init({
+            duration: 700,
+            easing: 'ease-out-cubic',
+            once: true,
+        });
+    </script>
 </body>
 
 </html>

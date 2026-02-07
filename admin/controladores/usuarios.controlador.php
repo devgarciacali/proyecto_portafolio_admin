@@ -245,7 +245,7 @@ class ControladorUsuarios
                          imagejpeg($destino, $ruta);
 
                     }
-                    if($_FILES['nuevaFoto']['type'] == 'image/png'){
+                    if($_FILES['editarnuevaFoto']['type'] == 'image/png'){
                         /**
                          * Guardamos la imagen en el directorio
                          */

@@ -6,7 +6,6 @@ class AjaxMain{
     /**========================
      * EDITAR USUARIO
      =========================*/
-
      public $idMain;
      public function ajaxEditarMain(){
         $campo = 'id';
@@ -28,13 +27,6 @@ class AjaxMain{
 
 if(isset($_POST['idMain'])){
     $editar = new AjaxMain();
-    $editar-> idMain = $_POST['idMain'];
+    $editar->idMain = $_POST['idMain'];
     $editar->ajaxEditarMain();
 }
-
-if(isset($_POST['eliminarMain'])){
-    $eliminarMain = new AjaxMain();
-    $eliminarMain-> idMain = $_POST['eliminarMain'];
-    $eliminarMain->ajaxEliminarMain();
-}
-

@@ -1,0 +1,501 @@
+/* ==========================================
+   ADMIN TAILWIND THEME - PORTFOLIO STYLE
+   =========================================== */
+
+:root {
+    --primary: #00d4ff;
+    --secondary: #7000ff;
+    --dark: #0f0f0f;
+    --dark-lighter: #1a1a1a;
+    --dark-accent: #0d1b2a;
+    --muted: #94a3b8;
+}
+
+/* ==========================================
+   GENERAL LAYOUT & BACKGROUND
+   =========================================== */
+
+body {
+    background: #000000 !important;
+    color: #e6eef6;
+    font-family: 'Nunito', 'Outfit', sans-serif;
+}
+
+#page-top {
+    background: #000000 !important;
+}
+
+#wrapper {
+    background: #000000 !important;
+}
+
+#content-wrapper {
+    background: #000000 !important;
+}
+
+#content {
+    background: #000000 !important;
+}
+
+/* ==========================================
+   SIDEBAR & NAVIGATION
+   =========================================== */
+
+#content #accordionSidebar {
+    background: linear-gradient(180deg, #0d1621 0%, #0f1a28 100%) !important;
+    border-right: 2px solid rgba(0, 212, 255, 0.12) !important;
+}
+
+.navbar,
+.bg-gradient-primary {
+    background: linear-gradient(90deg, #0d1621 0%, #0f1a28 100%) !important;
+    border-bottom: 2px solid rgba(0, 212, 255, 0.12) !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Sidebar links */
+.sidebar .nav-item .nav-link {
+    color: #a0b5c9 !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.sidebar .nav-item .nav-link:hover {
+    color: var(--primary) !important;
+    padding-left: 1.5rem !important;
+    background: rgba(0, 212, 255, 0.1) !important;
+}
+
+.sidebar .nav-item .nav-link.active {
+    background: linear-gradient(90deg, rgba(0, 212, 255, 0.12), rgba(112, 0, 255, 0.08)) !important;
+    color: var(--primary) !important;
+    border-left: 4px solid var(--primary) !important;
+    border-radius: 0 8px 8px 0;
+}
+
+/* ==========================================
+   MAIN CONTENT AREA
+   =========================================== */
+
+/* Main Content Area  - Already handled above */
+
+/* ==========================================
+   CARDS & CONTAINER ELEMENTS
+   =========================================== */
+
+.card {
+    background: rgba(13, 22, 33, 0.4);
+    border: 1.5px solid rgba(0, 212, 255, 0.15);
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(0, 212, 255, 0.12);
+    border-color: rgba(0, 212, 255, 0.25);
+}
+
+.card-header {
+    background: transparent;
+    border-bottom: 1px solid rgba(0, 212, 255, 0.1);
+    color: #00d4ff;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+    padding: 1.25rem !important;
+}
+
+/* ==========================================
+   TABLES
+   =========================================== */
+
+.table {
+    color: #e6eef6;
+    border-collapse: collapse;
+    background: transparent;
+    margin-bottom: 0;
+}
+
+.table thead {
+    background: rgba(13, 22, 33, 0.6);
+    border-top: 2px solid rgba(0, 212, 255, 0.3);
+    border-bottom: 2px solid rgba(0, 212, 255, 0.3);
+}
+
+.table thead th {
+    background: transparent;
+    color: #00d4ff;
+    border: none;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    padding: 1.2rem 1rem;
+}
+
+.table tbody td {
+    border: none;
+    border-bottom: 1px solid rgba(0, 212, 255, 0.1);
+    vertical-align: middle;
+    padding: 1.1rem 1rem;
+    color: #e6eef6;
+}
+
+.table tbody tr {
+    transition: background 0.2s ease;
+    background: transparent;
+}
+
+.table tbody tr:nth-child(odd) {
+    background: rgba(0, 212, 255, 0.04);
+}
+
+.table tbody tr:hover {
+    background: rgba(0, 212, 255, 0.08);
+}
+
+.table tbody tr:hover td {
+    color: #00d4ff;
+}
+
+.table tfoot th {
+    background: rgba(13, 22, 33, 0.6);
+    border-top: 2px solid rgba(0, 212, 255, 0.3);
+    border-bottom: 2px solid rgba(0, 212, 255, 0.3);
+    color: #cbd5e1;
+    font-size: 0.8rem;
+}
+
+/* ==========================================
+   BUTTONS
+   =========================================== */
+
+.btn {
+    font-weight: 700;
+    font-size: 0.9rem;
+    border-radius: 8px;
+    padding: 0.6rem 1.2rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #00d4ff, #00a8cc);
+    border: none;
+    color: #0f1419 !important;
+    box-shadow: 0 4px 12px rgba(0, 212, 255, 0.25);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 212, 255, 0.35);
+}
+
+.btn-warning {
+    background: linear-gradient(135deg, #fcc34d, #ffb700);
+    border: none;
+    color: #0f1419 !important;
+    box-shadow: 0 4px 12px rgba(255, 165, 0, 0.2);
+}
+
+.btn-warning:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(255, 165, 0, 0.3);
+}
+
+.btn-danger {
+    background: linear-gradient(135deg, #ff6b6b, #ee5a52);
+    border: none;
+    color: #fff !important;
+    box-shadow: 0 4px 12px rgba(255, 107, 107, 0.2);
+}
+
+.btn-danger:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(255, 107, 107, 0.3);
+}
+
+.btn-success {
+    background: linear-gradient(135deg, #00d4ff, #7000ff);
+    border: none;
+    color: #fff !important;
+    box-shadow: 0 4px 12px rgba(0, 212, 255, 0.25);
+}
+
+.btn-success:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 212, 255, 0.35);
+}
+
+.btn-secondary {
+    background: transparent;
+    border: 1.5px solid rgba(0, 212, 255, 0.3);
+    color: #00d4ff !important;
+}
+
+.btn-secondary:hover {
+    background: rgba(0, 212, 255, 0.1);
+    border-color: rgba(0, 212, 255, 0.5);
+}
+
+/* ==========================================
+   FORMS & INPUTS
+   =========================================== */
+
+.form-control {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(0, 212, 255, 0.15);
+    color: #e6eef6;
+    transition: all 0.2s ease;
+    border-radius: 8px;
+}
+
+.form-control:focus {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(0, 212, 255, 0.4);
+    box-shadow: 0 0 0 3px rgba(0, 212, 255, 0.1);
+    color: #e6eef6;
+}
+
+.form-control::placeholder {
+    color: #7a8ca0;
+}
+
+textarea.form-control {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.custom-file-input {
+    color: transparent;
+}
+
+.custom-file-input::-webkit-file-upload-button {
+    visibility: hidden;
+}
+
+.custom-file-label {
+    background: rgba(0, 212, 255, 0.06);
+    border: 1px solid rgba(0, 212, 255, 0.15);
+    color: #cbd5e1;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.custom-file-label:hover {
+    background: rgba(0, 212, 255, 0.1);
+    border-color: rgba(0, 212, 255, 0.25);
+}
+
+.form-group label {
+    color: #cbd5e1;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+/* ==========================================
+   MODALS
+   =========================================== */
+
+.modal-content {
+    background: linear-gradient(135deg, rgba(13, 22, 33, 0.95), rgba(20, 35, 55, 0.93));
+    border: 1px solid rgba(0, 212, 255, 0.2);
+    border-radius: 12px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.modal-header {
+    background: linear-gradient(90deg, rgba(0, 212, 255, 0.1), rgba(112, 0, 255, 0.08));
+    border-bottom: 1px solid rgba(0, 212, 255, 0.15);
+    border-radius: 12px 12px 0 0;
+}
+
+.modal-header .modal-title {
+    color: #00d4ff;
+    font-weight: 700;
+    font-size: 1.25rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.modal-header .close {
+    color: #00d4ff;
+    opacity: 0.8;
+    font-size: 1.5rem;
+}
+
+.modal-header .close:hover {
+    opacity: 1;
+    color: #fcc34d;
+}
+
+.modal-footer {
+    background: rgba(0, 0, 0, 0.2);
+    border-top: 1px solid rgba(0, 212, 255, 0.1);
+    border-radius: 0 0 12px 12px;
+    padding: 1.25rem;
+}
+
+.table tbody img {
+    border-radius: 6px;
+    border: 1px solid rgba(0, 212, 255, 0.15);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    transition: all 0.2s ease;
+}
+
+.table tbody img:hover {
+    border-color: rgba(0, 212, 255, 0.4);
+    box-shadow: 0 4px 12px rgba(0, 212, 255, 0.15);
+}
+
+.previsualizar {
+    border-radius: 12px;
+    border: 2px solid rgba(0, 212, 255, 0.2);
+    box-shadow: 0 8px 24px rgba(0, 212, 255, 0.1);
+    transition: all 0.3s ease;
+    max-width: 100%;
+    height: auto;
+}
+
+.previsualizar:hover {
+    border-color: rgba(0, 212, 255, 0.4);
+    box-shadow: 0 12px 36px rgba(0, 212, 255, 0.2);
+}
+
+/* ==========================================
+   ANIMATIONS
+   =========================================== */
+
+@keyframes floaty {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.animate-floaty {
+    animation: floaty 5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.slide-in-up {
+    animation: slideInUp 0.6s ease-out;
+}
+
+/* ==========================================
+   UTILITIES
+   =========================================== */
+
+h1, h2, h3, h4, h5, h6 {
+    color: #e6eef6;
+    font-weight: 700;
+}
+
+.text-primary {
+    color: var(--primary) !important;
+}
+
+.bg-light {
+    background: rgba(255, 255, 255, 0.02) !important;
+}
+
+.border-primary {
+    border-color: rgba(0, 212, 255, 0.2) !important;
+}
+
+.container-fluid {
+    background: #000000 !important;
+}
+
+/* Additional footer text visibility */
+footer .container {
+    background: transparent !important;
+}
+
+footer .my-auto {
+    color: #e6eef6 !important;
+}
+
+footer span {
+    color: #e6eef6 !important;
+}
+
+/* Scroll to top button */
+.scroll-to-top {
+    background: linear-gradient(135deg, rgba(0, 212, 255, 0.2), rgba(112, 0, 255, 0.15));
+    border: 1px solid rgba(0, 212, 255, 0.3);
+    color: #00d4ff;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    transition: all 0.3s ease;
+}
+
+.scroll-to-top:hover {
+    background: linear-gradient(135deg, rgba(0, 212, 255, 0.4), rgba(112, 0, 255, 0.3));
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 212, 255, 0.2);
+}
+
+/* Footer styling */
+footer.sticky-footer {
+    background: linear-gradient(90deg, #0d1621 0%, #1a2f42 100%) !important;
+    border-top: 2px solid rgba(0, 212, 255, 0.2);
+    color: #e6eef6;
+}
+
+footer.sticky-footer .copyright {
+    color: #00d4ff !important;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+footer.sticky-footer .copyright span {
+    color: #e6eef6;
+}
+
+/* ==========================================
+   RESPONSIVE
+   =========================================== */
+
+@media (max-width: 768px) {
+    .modal-dialog {
+        max-width: 95%;
+    }
+
+    .card {
+        margin-bottom: 1.5rem;
+    }
+
+    .table {
+        font-size: 0.875rem;
+    }
+
+    .sidebar .nav-item .nav-link {
+        padding: 0.75rem 1rem;
+    }
+}
+

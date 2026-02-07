@@ -53,6 +53,8 @@ class ModeloMain{
         if ($query->execute($parametros)) {
             return "ok";
         }else{
+            error_log("[ModeloMain::mdIEditarMain] Error ejecutando UPDATE: " . print_r($query->errorInfo(), true));
+            error_log("[ModeloMain::mdIEditarMain] Parametros: " . print_r($parametros, true));
             return "error";
         }
         $query->close();

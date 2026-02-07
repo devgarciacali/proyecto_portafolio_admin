@@ -104,7 +104,10 @@ class ControladorMain
                     $nuevoancho = 382;
                     $nuevoalto = 478;
 
-                    $logo = ControladorMain::guardarimagen($_FILES['editarnuevaFoto'],$directorio,$nuevoancho,$nuevoalto);
+                    $nuevaRuta = ControladorMain::guardarimagen($_FILES['editarnuevaFoto'],$directorio,$nuevoancho,$nuevoalto);
+                    if ($nuevaRuta) {
+                        $logo = $nuevaRuta;
+                    }
 
                 }
                
@@ -157,6 +160,10 @@ class ControladorMain
 
     public static function guardarimagen($imagen, $directorio, $nuevoancho, $nuevoalto)
     {
+        if (!isset($imagen) || !isset($imagen["tmp_name"]) || empty($imagen["tmp_name"]) || !file_exists($imagen["tmp_name"])) {
+            return false;
+        }
+
         list($ancho, $alto) = getimagesize($imagen["tmp_name"]);
 
         /*
