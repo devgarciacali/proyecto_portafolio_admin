@@ -208,7 +208,7 @@ if (isset($_SESSION['actividad'])) {
     <script src="vistas/js/links.js"></script>
     <script src="vistas/js/iconos.js"></script>
     <script src="vistas/js/sociales.js"></script>
-
+    <script src="vistas/js/main.js"></script>
 </body>
 
 </html>

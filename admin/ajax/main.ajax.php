@@ -1,40 +1,40 @@
 <?php 
-require_once "../controladores/cabezera.controlador.php";
-require_once "../modelos/cabezera.modelo.php";
+require_once "../controladores/main.controlador.php";
+require_once "../modelos/main.modelo.php";
 
-class AjaxCabezera{
+class AjaxMain{
     /**========================
      * EDITAR USUARIO
      =========================*/
 
-     public $idCabezera;
-     public function ajaxEditarCabezera(){
+     public $idMain;
+     public function ajaxEditarMain(){
         $campo = 'id';
-        $item = $this->idCabezera; 
+        $item = $this->idMain; 
     
 
-        $respuesta = ControladorCabezera::ctrMostrarCabezera($item, $campo);
+        $respuesta = ControladorMain::ctrMostrarMain($item, $campo);
         echo json_encode($respuesta);
      }
 
-     public function ajaxEliminarCabezera(){
+     public function ajaxEliminarMain(){
         $campo = 'id';
-        $item = $this->idCabezera; 
-        $tabla= 'cabezera';
-        $respuesta = ModeloCabezera::MdlEliminarCabezera($item, $campo, $tabla);
+        $item = $this->idMain; 
+        $tabla= 'main';
+        $respuesta = ModeloMain::MdlEliminarMain($item, $campo, $tabla);
         return $respuesta;
      }
 }
 
-if(isset($_POST['idCabezera'])){
-    $editar = new AjaxCabezera();
-    $editar-> idCabezera = $_POST['idCabezera'];
-    $editar->ajaxEditarCabezera();
+if(isset($_POST['idMain'])){
+    $editar = new AjaxMain();
+    $editar-> idMain = $_POST['idMain'];
+    $editar->ajaxEditarMain();
 }
 
-if(isset($_POST['eliminarCabezera'])){
-    $eliminarCabezera = new AjaxCabezera();
-    $eliminarCabezera-> idCabezera = $_POST['eliminarCabezera'];
-    $eliminarCabezera->ajaxEliminarCabezera();
+if(isset($_POST['eliminarMain'])){
+    $eliminarMain = new AjaxMain();
+    $eliminarMain-> idMain = $_POST['eliminarMain'];
+    $eliminarMain->ajaxEliminarMain();
 }
 

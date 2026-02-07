@@ -50,8 +50,7 @@
                                 <td><?= $campo->nombre ?></td>
                                 <td><?= $campo->especialidad ?></td>
                                 <td><?= $campo->descripcion ?></td>
-                                <td><?= $campo->linkfoto ?></td>
-
+                                <td><img src="<?= $campo->linkfoto ?>" width="50px"></td>
                                 <td><button class="btn btn-warning btnEditarMain" idMain="<?= $campo->id ?>"
                                         data-toggle="modal" data-target="#modalEditarMain">
                                         Editar
