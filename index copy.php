@@ -92,8 +92,7 @@
                             Manuel Garcia</span>
                     </h1>
                     <p class="text-gray-400 text-lg md:text-xl mb-10 max-w-xl">
-                        Especialista en desarrollo <span class="text-white font-medium">Frontend</span> y <span
-                            class="text-white font-medium">Backend</span>.
+                        Especialista en desarrollo 
                         Transformo ideas en experiencias digitales sorprendentes, modernas y funcionales.
                     </p>
                     <div class="flex flex-wrap gap-4">

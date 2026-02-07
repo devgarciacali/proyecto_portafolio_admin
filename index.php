@@ -92,9 +92,7 @@
                             Manuel Garcia</span>
                     </h1>
                     <p class="text-gray-400 text-lg md:text-xl mb-10 max-w-xl">
-                        Especialista en desarrollo <span class="text-white font-medium">Frontend</span> y <span
-                            class="text-white font-medium">Backend</span>.
-                        Transformo ideas en experiencias digitales sorprendentes, modernas y funcionales.
+                        Especialista en desarrollo Transformo ideas en experiencias digitales sorprendentes, modernas y funcionales.
                     </p>
                     <div class="flex flex-wrap gap-4">
                         <button
@@ -116,6 +114,7 @@
                         class="absolute -inset-4 bg-gradient-to-r from-primary to-secondary rounded-3xl blur opacity-20 group-hover:opacity-40 transition duration-1000">
                     </div>
                     <div class="relative overflow-hidden rounded-3xl border border-white/10 aspect-[4/5]">
+                        <!-- FOTO DE PERFIL -->
                         <img src="img/perfil1.jpg" alt="Jose Manuel Garcia"
                             class="w-full h-full object-cover transform transition duration-500 group-hover:scale-110">
                         <!-- Gradient Overlay (Fade effect) -->

@@ -1,6 +1,5 @@
 <?php
 
-
 //llamo la conexion para utlizar las data base y asi mismo poder utilizar cada una de las tablas
 require_once "conexion.php";
 
