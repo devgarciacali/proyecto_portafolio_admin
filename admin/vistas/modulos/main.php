@@ -3,7 +3,9 @@
 
     <!-- Page Heading -->
     <h1 class="h3 mb-2 text-gray-800">Administrar Main</h1>
-
+    <button class="btn btn-primary mb-3" data-toggle="modal" data-target="#modalAgregarMain">
+        Agregar Main
+    </button>
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
         <div class="card-header py-3">
@@ -19,18 +21,18 @@
                             <th>nombre</th>
                             <th>especialidad</th>
                             <th>descripcion</th>
-                            <th>linfoto</th>
+                            <th>linkfoto</th>
                             <th>Editar</th>
 
                         </tr>
                     </thead>
                     <tfoot>
                         <tr>
-                           <th>id</th>
+                            <th>id</th>
                             <th>nombre</th>
                             <th>especialidad</th>
                             <th>descripcion</th>
-                            <th>linfoto</th>
+                            <th>linkfoto</th>
                             <th>Editar</th>
 
                         </tr>
@@ -45,13 +47,13 @@
                             ?>
                             <tr>
                                 <td><?= $campo->id ?></td>
-                                <td><?= $campo->titulo ?></td>
-                                <td><?= $campo->link ?></td>
-                                <td><img src="<?= $campo->logo ?>" width="50px"></td>
-                                <td><?= $campo->texto ?></td>
+                                <td><?= $campo->nombre ?></td>
+                                <td><?= $campo->especialidad ?></td>
+                                <td><?= $campo->descripcion ?></td>
+                                <td><?= $campo->linkfoto ?></td>
 
-                                <td><button class="btn btn-warning btnEditarCabezera" idCabezera="<?= $campo->id ?>"
-                                        data-toggle="modal" data-target="#modalEditarCebezera">
+                                <td><button class="btn btn-warning btnEditarMain" idMain="<?= $campo->id ?>"
+                                        data-toggle="modal" data-target="#modalEditarMain">
                                         Editar
                                     </button></td>
                             </tr>
@@ -69,14 +71,14 @@
 
 <!-- MODAL AGREGAR CABEZARA -->
 
-<div class="modal fade" id="modalAgregarCabezera" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+<div class="modal fade" id="modalAgregarMain" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
     aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <form class="user" method="post" enctype="multipart/form-data">
                 <!-- CABEZA MODAL -->
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Agregar Cabezera</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Agregar Main</h5>
                     <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">×</span>
                     </button>
@@ -86,28 +88,28 @@
                 <!-- CUERPO MODAL -->
                 <div class="modal-body">
                     <div class="form-group row">
-                        <!-- ENTRADA DEL TITULO -->
+                        <!-- ENTRADA DEL NOMBRE -->
                         <div class="col-sm-6 mb-3 mb-sm-0">
-                            <input type="text" class="form-control form-control-user" name="titulo"
-                                placeholder="Titulo">
+                            <input type="text" class="form-control form-control-user" name="nombre"
+                                placeholder="Nombre">
                         </div>
-                        <!-- ENTRADA LINK -->
+                        <!-- ENTRADA ESPECIALIDAD -->
                         <div class="col-sm-6">
-                            <input type="text" class="form-control form-control-user" name="link"
-                                placeholder="Link de la red Social">
+                            <input type="text" class="form-control form-control-user" name="especialidad"
+                                placeholder="Especialidad">
                         </div>
-
+                        <!-- ENTRADA DESCRIPCION -->
                         <div class="col-sm-6 py-3">
-                            <input type="file" class="nuevoLogo form-control form-control-user" name="logo"
+                            <input type="text" class="form-control form-control-user" name="descripcion"
+                                placeholder="Descripcion">
+                        </div>
+                        <!-- ENTRADA FOTO -->
+                        <div class="col-sm-6 py-3">
+                            <input type="file" class="nuevoLogo form-control form-control-user" name="linkfoto"
                                 placeholder="Sube el logo">
                             <p>Peso maximo de la foto 2MB</p>
                             <img src="vistas/img/usuarios/default/anonimo.png" class="img-thumbail previsualizar"
                                 width="100px">
-                        </div>
-                        <!-- ENTRADA codigo -->
-                        <div class="col-sm-6 py-3">
-                            <input type="text" class="form-control form-control-user" name="texto"
-                                placeholder="Escribe tu codigo">
                         </div>
                     </div>
                 </div>
@@ -131,14 +133,14 @@
 
 <!-- MODAL EDITAR CABEZERA -->
 
-<div class="modal fade" id="modalEditarCebezera" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+<div class="modal fade" id="modalEditarMain" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
     aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <form class="user" method="post" enctype="multipart/form-data">
                 <!-- CABEZA MODAL -->
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Editar Cabezera</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Editar Main</h5>
                     <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">❌</span>
                     </button>
@@ -148,17 +150,24 @@
                 <!-- CUERPO MODAL -->
                 <div class="modal-body">
                     <div class="form-group row">
-                        <!-- ENTRAD DE LA CABEZERA -->
-                        <div class="col-sm-6 mb-3 mb-sm-0">
-                            <input type="text" class="form-control form-control-user" name="editartitulo"
-                                id="editartitulo" value="">
+
+                        <!-- ENTRADA nombre -->
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control form-control-user" name="editarnombre"
+                                id="editarnombre" value="">
                             <input type="hidden" name="editarid" id="editarid" value="">
                         </div>
-                        <!-- ENTRADA LINK -->
-                        <div class="col-sm-6">
-                            <input type="text" class="form-control form-control-user" name="editarlink" id="editarlink"
-                                value="">
+                        <!-- ENTRADA ESPECIALIDAD   -->
+                        <div class="col-sm-6 py-3">
+                            <input type="text" class="form-control form-control-user" name="editarespecialidad"
+                                id="editarespecialidad" value="">
                         </div>
+                        <!-- ENTRADA DESCRIPCION -->
+                        <div class="col-sm-6 py-3">
+                            <input type="text" class="form-control form-control-user" name="editardescripcion"
+                                id="editardescripcion" value="">
+                        </div>
+                        <!-- ENTRADA FOTO -->
 
                         <div class="col-sm-6 py-3">
                             <input type="file" class="nuevaFoto form-control form-control-user" name="editarnuevaFoto">
@@ -166,11 +175,6 @@
                             <img src="vistas/img/usuarios/default/anonimo.png" class="img-thumbail previsualizar"
                                 width="100px">
                             <input type="hidden" name="fotoactual" id="fotoactual">
-                        </div>
-                        <!-- ENTRADA codigo -->
-                        <div class="col-sm-6 py-3">
-                            <input type="text" class="form-control form-control-user" name="editartexto"
-                                id="editartexto" value="">
                         </div>
                     </div>
                 </div>

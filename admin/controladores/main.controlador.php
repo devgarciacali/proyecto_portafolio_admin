@@ -19,24 +19,24 @@ class ControladorMain
     {
         
                 
-        if (isset($_POST["titulo"])) {
+        if (isset($_POST["nombre"])) {
             if (
-                !empty($_POST['titulo']) && !empty($_POST['link'])
-                && !empty($_POST['texto']) && !empty($_FILES['logo']['tmp_name'])
+                !empty($_POST['nombre']) && !empty($_POST['especialidad'])
+                && !empty($_POST['descripcion']) && !empty($_FILES['linkfoto']['tmp_name'])
             ) {
 
-                $directorio = 'vistas/img/logo';
-                $nuevoalto =540;
-                $nuevoancho =200;
+                $directorio = 'vistas/img/perfil';
+                $nuevoalto =478;
+                $nuevoancho =382;
                 
-                $logo = ControladorMain::guardarimagen($_FILES['logo'],$directorio,$nuevoancho,$nuevoalto);
+                $logo = ControladorMain::guardarimagen($_FILES['linkfoto'],$directorio,$nuevoancho,$nuevoalto);
                
-                $tabla = 'cabezera';                
+                $tabla = 'main';                
                 $parametros = [
-                    'titulo' => $_POST['titulo'],
-                    'link' => $_POST['link'],
-                    'logo' => $logo,
-                    'texto' => $_POST['texto'],                    
+                    'nombre' => $_POST['nombre'],
+                    'especialidad' => $_POST['especialidad'],
+                    'descripcion' => $_POST['descripcion'],
+                    'linkfoto' => $logo,                    
                 ];
                 var_dump($parametros);
                 
@@ -50,7 +50,7 @@ class ControladorMain
                         confirmButtonText: "Cerrar"
                         }).then(function(result){
                             if(result.value){
-                                window.location ="?ruta=header";
+                                window.location ="?ruta=main";
                              }                        
                         });
                     </script>';
@@ -58,12 +58,12 @@ class ControladorMain
                     echo '<script>
                     swal({
                         type: "error",
-                        title: "Cabezaera no se guardo",
+                        title: "Main no se guardo",
                         showConfirmButton: true,
                         confirmButtonText: "Cerrar"
                         }).then(function(result){
                             if(result.value){
-                                window.location ="?ruta=header";
+                                window.location ="?ruta=main";
                              }                        
                         });
                     </script>';
@@ -78,7 +78,7 @@ class ControladorMain
                         confirmButtonText: "Cerrar"
                         }).then(function(result){
                             if(result.value){
-                                window.location ="?ruta=header";
+                                window.location ="?ruta=main";
                              }                        
                         });
                     </script>';
@@ -95,14 +95,14 @@ class ControladorMain
 
     static public function ctrEditarMain()
     {       
-        if (isset($_POST["editartitulo"])) {           
+        if (isset($_POST["editarnombre"])) {           
             
                   $logo = $_POST["fotoactual"]; 
                 if (isset($_FILES['editarnuevaFoto']['tmp_name']) && !empty($_FILES['editarnuevaFoto'])) {
-                    $directorio = 'vistas/img/logo';
+                    $directorio = 'vistas/img/perfil';
                    
-                    $nuevoancho = 540;
-                    $nuevoalto = 200;
+                    $nuevoancho = 382;
+                    $nuevoalto = 478;
 
                     $logo = ControladorMain::guardarimagen($_FILES['editarnuevaFoto'],$directorio,$nuevoancho,$nuevoalto);
 
@@ -111,10 +111,10 @@ class ControladorMain
                 $tabla = 'main';
                 $id = $_POST['editarid'];              
                 $parametros = [
-                    'titulo' => $_POST['editartitulo'],
-                    'link' => $_POST['editarlink'],
-                    'logo' => $logo,
-                    'texto' => $_POST['editartexto'],                    
+                    'nombre' => $_POST['editarnombre'],
+                    'especialidad' => $_POST['editarespecialidad'],
+                    'descripcion' => $_POST['editardescripcion'],
+                    'linkfoto' => $logo,                    
                 ];
                
                 $respuesta =  ModeloMain::mdIEditarMain($tabla, $parametros, $id);
@@ -127,7 +127,7 @@ class ControladorMain
                         confirmButtonText: "Cerrar"
                         }).then(function(result){
                             if(result.value){
-                                window.location ="header";
+                                window.location ="?ruta=main";
                              }                        
                         });
                     </script>';
@@ -140,7 +140,7 @@ class ControladorMain
                         confirmButtonText: "Cerrar"
                         }).then(function(result){
                             if(result.value){
-                                window.location ="header";
+                                window.location ="?ruta=main";
                              }                        
                         });
                     </script>';
