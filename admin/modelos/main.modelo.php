@@ -3,9 +3,9 @@
 //llamo la conexion para utlizar las data base y asi mismo poder utilizar cada una de las tablas
 require_once "conexion.php";
 
-class ModeloCabezera{
-    /**Mostrar Cabezera */
-    static public function mdlMostrarCabezera($tabla, $item, $campo){
+class ModeloMain{
+    /**Mostrar Main */
+    static public function mdlMostrarMain($tabla, $item, $campo){
         if ($item != null) {
 
             $query = Conexion::start()->prepare("SELECT * FROM $tabla WHERE $campo = '$item'"); 
@@ -24,7 +24,7 @@ class ModeloCabezera{
     /***
      * CREAR Cabezera
      */
-    static public function mdIgresarCabezera($tabla,$parametros){
+    static public function mdIgresarMain($tabla,$parametros){
         $col = implode(', ',array_keys($parametros));
         $valores = ":". implode(', :',array_keys($parametros)); 
         var_dump($col);           
@@ -40,7 +40,7 @@ class ModeloCabezera{
     /***
      * EDITAR Cabezera
      */
-    static public function mdIEditarCabezera($tabla, $parametros, $id){
+    static public function mdIEditarMain($tabla, $parametros, $id){
     
         
         $col = implode(', ',array_map(function($col){
@@ -63,7 +63,7 @@ class ModeloCabezera{
      * ELIMINAR Cabezera
      =========================================*/
 
-     static public function MdlEliminarCabezera($item, $campo, $tabla){
+     static public function MdlEliminarMain($item, $campo, $tabla){
         $query = Conexion::start()->prepare("DELETE from {$tabla} WHERE $campo = '$item'");
         if ($query->execute()) {
             return "ok";

@@ -48,7 +48,7 @@ if (isset($_SESSION['actividad'])) {
 
     <?php
     if (!isset($_SESSION['usuario'])) {
-    ?>
+        ?>
 
         <!-- Codigo del Login en Hmtl  si no esta logiado-->
         <div class="container">
@@ -102,10 +102,10 @@ if (isset($_SESSION['actividad'])) {
 
         </div>
 
-    <?php
+        <?php
         exit();
     } else {
-    ?>
+        ?>
         <!-- Codigo del Panel si esta logiado -->
 
         <!-- Page Wrapper -->
@@ -135,18 +135,9 @@ if (isset($_SESSION['actividad'])) {
                     ///
                     if (isset($_GET["ruta"])) {
                         if (
-                            $_GET["ruta"] == "usuarios"||                          
-                            $_GET["ruta"] == "header"||
-                            $_GET["ruta"] == "inicio"||
-                            $_GET["ruta"] == "noticias"||
-                            $_GET["ruta"] == "sliders"||
-                            $_GET["ruta"] == "interes"||
-                            $_GET["ruta"] == "autor"||
-                            $_GET["ruta"] == "links"||
-                            $_GET["ruta"] == "iconos"||
-                            $_GET["ruta"] == "quejas"||
-                            $_GET["ruta"] == "sociales"
-
+                            $_GET["ruta"] == "usuarios" ||
+                            $_GET["ruta"] == "inicio" ||
+                            $_GET["ruta"] == "main" 
                         ) {
                             include 'modulos/' . $_GET["ruta"] . '.php';
                         } else {
@@ -155,9 +146,6 @@ if (isset($_SESSION['actividad'])) {
                     } else {
                         include 'modulos/inicio.php';
                     }
-
-
-
                     /**================================
                      * FOOTER
                     ==================================== */
@@ -172,7 +160,7 @@ if (isset($_SESSION['actividad'])) {
 
         </div>
         <!-- End of Page Wrapper -->
-    <?php
+        <?php
     }
     ?>
 
@@ -220,7 +208,7 @@ if (isset($_SESSION['actividad'])) {
     <script src="vistas/js/links.js"></script>
     <script src="vistas/js/iconos.js"></script>
     <script src="vistas/js/sociales.js"></script>
-    
+
 </body>
 
 </html>

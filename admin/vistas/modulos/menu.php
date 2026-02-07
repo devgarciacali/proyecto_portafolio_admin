@@ -40,84 +40,15 @@
             <!-- Divider -->
             <hr class="sidebar-divider">
             <li class="nav-item">
-                <a class="nav-link" href="quejas">
+                <a class="nav-link" href="main">
                     <i class="fas fa-solid fa-envelope"></i>
-                    <span>Mostrar Buzon</span></a>
+                    <span>Mostrar Main</span></a>
             </li>
 
             <?php
         }
     }
     ?>
-    <!-- Divider -->
-    <hr class="sidebar-divider">
-
-    <li class="nav-item">
-        <a class="nav-link" href="iconos">
-            <i class="fas fa-solid fa-camera"></i>
-            <span>Mostrar Iconos</span></a>
-    </li>
-    <!-- Divider -->
-    <hr class="sidebar-divider">
-    <!-- Nav Item - Charts -->
-    <li class="nav-item">
-        <a class="nav-link" href="header">
-            <i class="fas fa-solid fa-bars"></i>
-            <span>Mostrar Cabezera</span></a>
-    </li>
-    <!-- Divider -->
-    <hr class="sidebar-divider">
-
-    <!-- Nav Item - Charts -->
-    <li class="nav-item">
-        <a class="nav-link" href="noticias">
-            <i class="fas fa-solid fa-passport"></i>
-            <span>Mostrar Noticias</span></a>
-    </li>
-    <!--   -->
-    <!--   -->
-
-    <!-- Divider -->
-    <hr class="sidebar-divider">
-
-    <!-- Nav Item - Charts -->
-    <li class="nav-item">
-        <a class="nav-link" href="interes">
-            <i class="fas fa-solid fa-paperclip"></i>
-            <span>Mostrar sitios interes</span></a>
-    </li>
-
-    <!-- Divider -->
-    <hr class="sidebar-divider">
-
-    <!-- Nav Item - Charts -->
-    <li class="nav-item">
-        <a class="nav-link" href="sociales">
-            <i class="fas fa-solid fa-paper-plane"></i>
-            <span>Redes Sociales</span></a>
-    </li>
-
-    <!-- Divider -->
-    <hr class="sidebar-divider">
-
-    <!-- Nav Item - Charts -->
-    <li class="nav-item">
-        <a class="nav-link" href="autor">
-            <i class="fas fa-solid fa-camera"></i>
-            <span> Foto del presidente</span></a>
-    </li>
-
-    <!-- Divider -->
-    <hr class="sidebar-divider">
-
-    <!-- Nav Item - Charts -->
-    <li class="nav-item">
-        <a class="nav-link" href="links">
-            <i class="fas fa-solid fa-paperclip"></i>
-            <span>Mostrar Links</span></a>
-    </li>
-
-
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">
 

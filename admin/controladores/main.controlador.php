@@ -1,21 +1,21 @@
 <?php
 
-class ControladorCabezera
+class ControladorMain
 {
     /**
      * MOSTRAR CABEZERA
      */
-    static public function ctrMostrarCabezera($item, $campo)
+    static public function ctrMostrarMain($item, $campo)
     {
-        $tabla = 'cabezera';
+        $tabla = 'main';
 
-        $respuesta = ModeloCabezera::mdlMostrarCabezera($tabla, $item, $campo);
+        $respuesta = ModeloMain::mdlMostrarMain($tabla, $item, $campo);
         return $respuesta;
     }
     /**
-     * CREAR CABEZERA
+     * CREAR MAIN
      */
-    static public function ctrCrearCabezera()
+    static public function ctrCrearMain()
     {
         
                 
@@ -29,7 +29,7 @@ class ControladorCabezera
                 $nuevoalto =540;
                 $nuevoancho =200;
                 
-                $logo = ControladorCabezera::guardarimagen($_FILES['logo'],$directorio,$nuevoancho,$nuevoalto);
+                $logo = ControladorMain::guardarimagen($_FILES['logo'],$directorio,$nuevoancho,$nuevoalto);
                
                 $tabla = 'cabezera';                
                 $parametros = [
@@ -40,12 +40,12 @@ class ControladorCabezera
                 ];
                 var_dump($parametros);
                 
-                $respuesta = ModeloCabezera::mdIgresarCabezera($tabla, $parametros);
+                $respuesta = ModeloMain::mdIgresarMain($tabla, $parametros);
                 if ($respuesta == "ok") {
                     echo '<script>
                     swal({
                         type: "success",
-                        title: "Cabezera Guardado correctamente",
+                        title: "Main Guardado correctamente",
                         showConfirmButton: true,
                         confirmButtonText: "Cerrar"
                         }).then(function(result){
@@ -93,7 +93,7 @@ class ControladorCabezera
      * ===========================================
      */
 
-    static public function ctrEditarCabezera()
+    static public function ctrEditarMain()
     {       
         if (isset($_POST["editartitulo"])) {           
             
@@ -104,11 +104,11 @@ class ControladorCabezera
                     $nuevoancho = 540;
                     $nuevoalto = 200;
 
-                    $logo = ControladorCabezera::guardarimagen($_FILES['editarnuevaFoto'],$directorio,$nuevoancho,$nuevoalto);
+                    $logo = ControladorMain::guardarimagen($_FILES['editarnuevaFoto'],$directorio,$nuevoancho,$nuevoalto);
 
                 }
                
-                $tabla = 'cabezera';
+                $tabla = 'main';
                 $id = $_POST['editarid'];              
                 $parametros = [
                     'titulo' => $_POST['editartitulo'],
@@ -117,12 +117,12 @@ class ControladorCabezera
                     'texto' => $_POST['editartexto'],                    
                 ];
                
-                $respuesta =  ModeloCabezera::mdIEditarCabezera($tabla, $parametros, $id);
+                $respuesta =  ModeloMain::mdIEditarMain($tabla, $parametros, $id);
                 if ($respuesta == "ok") {
                     echo '<script>
                     swal({
                         type: "success",
-                        title: "Usuario Guardado correctamente",
+                        title: "Main Guardado correctamente",
                         showConfirmButton: true,
                         confirmButtonText: "Cerrar"
                         }).then(function(result){
