@@ -78,7 +78,7 @@
         </div>
     </header>
 
-    <!-- MAIN CONFIGURACION DE DESCRIPCION - foto de perfil -->
+    <!-- MAIN CONFIGURACION DE DESCRIPCION -->
     <main>
         <section class="min-h-screen flex items-center pt-20 px-6 max-w-7xl mx-auto" id="inicio">
             <div class="grid md:grid-cols-2 gap-12 items-center">
